@@ -1,7 +1,7 @@
 {
-  "name": "yeelight-blue",
+  "name": "cdif-yeelight-blue",
   "version": "1.0.0",
-  "description": "A Node.js lib for the yeelight blue and lightstrips",
+  "description": "CDIF's lib for the yeelight blue and lightstrips",
   "main": "index.js",
   "scripts": {
     "test": "jshint *.js"
@@ -14,7 +14,7 @@
     "yeelight",
     "blue"
   ],
-  "author": "Sandeep Mistry <sandeep.mistry@gmail.com>",
+  "author": "out4b <seeds.c@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/out4b/node-yeelight-blue/issues"
