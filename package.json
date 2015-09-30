@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/sandeepmistry/node-yeelight-blue.git"
+    "url": "https://github.com/out4b/node-yeelight-blue.git"
   },
   "keywords": [
     "yeelight",
@@ -17,14 +17,11 @@
   "author": "Sandeep Mistry <sandeep.mistry@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/sandeepmistry/node-yeelight-blue/issues"
+    "url": "https://github.com/out4b/node-yeelight-blue/issues"
   },
-  "homepage": "https://github.com/sandeepmistry/node-yeelight-blue",
+  "homepage": "https://github.com/out4b/node-yeelight-blue",
   "dependencies": {
-    "noble-device": "~1.1.0"
   },
   "devDependencies": {
-    "async": "~0.8.0",
-    "jshint": "~2.5.0"
   }
 }
