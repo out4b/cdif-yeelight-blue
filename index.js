@@ -49,7 +49,6 @@ YeelightBlue.prototype.turnOn = function(callback) {
 };
 
 YeelightBlue.prototype.turnOff = function(callback) {
-  console.log(this);
   this.writeControlCharateristic(0, 0, 0, 0, callback);
 };
 
@@ -62,78 +61,78 @@ YeelightBlue.prototype.setGradualMode = function(on, callback) {
 };
 
 var getYeelightBlueBrightness = function(args, callback) {
-    var output = {};
-    output['loadLevelState'] = this.state.bright;
-    callback(null, output);
+  var output = {};
+  output['loadLevelState'] = this.state.bright;
+  callback(null, output);
 };
 
 var setYeelightBlueBrightness = function(args, callback) {
-    var _this = this;
-    var bright = args.newLoadLevelState;
-    var red = this.state.red;
-    var green = this.state.green;
-    var blue = this.state.blue;
+  var _this = this;
+  var bright = args.newLoadLevelState;
+  var red = this.state.red;
+  var green = this.state.green;
+  var blue = this.state.blue;
 
-    this.setColorAndBrightness(red, green, blue, bright, function(err) {
-        if (!err) {
-            _this.state.bright = bright;
-        }
-        callback(err);
-    });
+  this.setColorAndBrightness(red, green, blue, bright, function(err) {
+    if (!err) {
+      _this.state.bright = bright;
+    }
+    callback(err);
+  });
 };
 
 var getYeelightBlueColor = function(args, callback) {
-    var output = {};
-    output['red'] = this.state.red;
-    output['green'] = this.state.green;
-    output['blue'] = this.state.blue;
-    callback(null, output);
+  var output = {};
+  output['red'] = this.state.red;
+  output['green'] = this.state.green;
+  output['blue'] = this.state.blue;
+  callback(null, output);
 };
 
 var setYeelightBlueColor = function(args, callback) {
-    var _this = this;
-    var red = args.red;
-    var green = args.green;
-    var blue = args.blue;
-    var bright = this.state.bright;
-    this.setColorAndBrightness(red, green, blue, bright, function(err) {
-        if (!err) {
-            _this.state.red = red;
-            _this.state.green = green;
-            _this.state.blue = blue;
-        }
-        callback(err);
-    });
+  var _this = this;
+  var red = args.red;
+  var green = args.green;
+  var blue = args.blue;
+  var bright = this.state.bright;
+  this.setColorAndBrightness(red, green, blue, bright, function(err) {
+    if (!err) {
+      _this.state.red = red;
+      _this.state.green = green;
+      _this.state.blue = blue;
+    }
+    callback(err);
+  });
 };
 
 var getYeelightBlueState = function(args, callback) {
-    var output = {};
-    if (this.state.bright > 0) {
-        output['stateValue'] = true;
-    } else {
-        output['stateValue'] = false;
-    }
-    callback(null, output);
+  var output = {};
+  if (this.state.bright > 0) {
+    output['stateValue'] = true;
+  } else {
+    output['stateValue'] = false;
+  }
+  callback(null, output);
 };
 
 var setYeelightBlueState = function(args, callback) {
-    var _this = this;
-    var arg = args.stateValue;
-    if (arg == true) {
-        this.turnOn(function(err) {
-            if (!err) {
-                _this.state.bright = 100;
-            }
-            callback(err);
-        });
-    } else if (arg == false) {
-        this.turnOff(function(err) {
-            if (!err) {
-                _this.state.bright = 0;
-            }
-            callback(err);
-        });
-    }
+  var _this = this;
+  var arg = args.stateValue;
+  if (arg == true) {
+    this.turnOn(function(err) {
+      if (!err) {
+        _this.state.bright = 100;
+      }
+      callback(err);
+    });
+  } else if (arg == false) {
+    this.turnOff(function(err) {
+      if (!err) {
+        _this.state.bright = 0;
+      }
+      callback(err);
+    });
+  }
 };
 
 module.exports = YeelightBlue;
