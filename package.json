@@ -1,6 +1,6 @@
 {
   "name": "cdif-yeelight-blue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CDIF's lib for the yeelight blue and lightstrips",
   "main": "index.js",
   "scripts": {
@@ -16,6 +16,7 @@
   ],
   "author": "out4b <seeds.c@gmail.com>",
   "license": "MIT",
+  "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/out4b/cdif-yeelight-blue/issues"
   },

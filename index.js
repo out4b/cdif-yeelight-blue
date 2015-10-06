@@ -1,3 +1,9 @@
+/*
+	CDIF Yeelight Blue module implementation
+	This module is based on Sandeep Mistry's Yeelight blue library for node.js to
+	control Yeelight Blue BLE lightbulb.
+*/
+
 var util = require('util');
 var CdifDevice = require('cdif-device');
 
@@ -19,8 +25,6 @@ var YeelightBlue = function(bleDevice) {
   this.state = {red: 255, green: 255, blue: 255, bright: 100};
 
 };
-
-YeelightBlue.SCAN_UUIDS = [SERVICE_UUID];
 
 util.inherits(YeelightBlue, CdifDevice);
 
