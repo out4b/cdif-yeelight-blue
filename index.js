@@ -16,14 +16,18 @@ var YeelightBlue = function(bleDevice) {
   var spec = require('./yeelight-blue.json');
   CdifDevice.call(this, spec);
   this.device = bleDevice;
-  this.actions['urn:cdif-net:serviceId:BinarySwitch']['getState'] = getYeelightBlueState.bind(this);
-  this.actions['urn:cdif-net:serviceId:BinarySwitch']['setState'] = setYeelightBlueState.bind(this);
-  this.actions['urn:cdif-net:serviceId:Dimming']['getLoadLevelState'] = getYeelightBlueBrightness.bind(this);
-  this.actions['urn:cdif-net:serviceId:Dimming']['setLoadLevelState'] = setYeelightBlueBrightness.bind(this);
-  this.actions['urn:yeelight-com:serviceId:ColorAdjust']['getColor'] = getYeelightBlueColor.bind(this);
-  this.actions['urn:yeelight-com:serviceId:ColorAdjust']['setColor'] = setYeelightBlueColor.bind(this);
-  this.state = {red: 255, green: 255, blue: 255, bright: 100};
+  var service;
+  service = this.services['urn:cdif-net:serviceId:BinarySwitch'];
+  service.addAction('getState', getYeelightBlueState.bind(this));
+  service.addAction('setState', setYeelightBlueState.bind(this));
+  service = this.services['urn:cdif-net:serviceId:Dimming'];
+  service.addAction('getLoadLevelState', getYeelightBlueBrightness.bind(this));
+  service.addAction('setLoadLevelState', setYeelightBlueBrightness.bind(this));
+  service = this.services['urn:yeelight-com:serviceId:ColorAdjust'];
+  service.addAction('getColor', getYeelightBlueColor.bind(this));
+  service.addAction('setColor', setYeelightBlueColor.bind(this));
 
+  this.state = {red: 255, green: 255, blue: 255, bright: 100};
 };
 
 util.inherits(YeelightBlue, CdifDevice);
@@ -126,6 +130,9 @@ var setYeelightBlueState = function(args, callback) {
     this.turnOn(function(err) {
       if (!err) {
         _this.state.bright = 100;
+        _this.state.red = 255;
+        _this.state.green = 255;
+        _this.state.blue = 255;
       }
       callback(err);
     });
@@ -133,6 +140,9 @@ var setYeelightBlueState = function(args, callback) {
     this.turnOff(function(err) {
       if (!err) {
         _this.state.bright = 0;
+        _this.state.red = 0;
+        _this.state.green = 0;
+        _this.state.blue = 0;        
       }
       callback(err);
     });
