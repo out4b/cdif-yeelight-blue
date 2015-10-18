@@ -65,7 +65,7 @@ YeelightBlue.prototype.setColorAndBrightness = function(red, green, blue, bright
 };
 
 YeelightBlue.prototype.setGradualMode = function(on, callback) {
-  this.device.writeServiceStringCharacteristic(EFFECT_UUID, on ? 'TS' : 'TE', callback);
+  this.writeServiceStringCharacteristic(EFFECT_UUID, on ? 'TS' : 'TE', callback);
 };
 
 var getYeelightBlueBrightness = function(args, callback) {
@@ -142,7 +142,7 @@ var setYeelightBlueState = function(args, callback) {
         _this.state.bright = 0;
         _this.state.red = 0;
         _this.state.green = 0;
-        _this.state.blue = 0;        
+        _this.state.blue = 0;
       }
       callback(err);
     });
