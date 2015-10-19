@@ -25,7 +25,7 @@
       }
     ],
     "serviceList": {
-      "urn:cdif-net:serviceId:BinarySwitch": {
+      "urn:cdif-net:serviceID:BinarySwitch": {
         "serviceType": "urn:cdif-net:service:SwitchPower:1",
         "actionList": {
           "getState": {
@@ -54,7 +54,7 @@
           }
         }
       },
-      "urn:cdif-net:serviceId:Dimming": {
+      "urn:cdif-net:serviceID:Dimming": {
         "serviceType": "urn:cdif-net:service:Dimming:1",
         "actionList": {
           "setLoadLevelState": {
@@ -115,7 +115,7 @@
           }
         }
       },
-      "urn:yeelight-com:serviceId:ColorAdjust": {
+      "urn:yeelight-com:serviceID:ColorAdjust": {
         "serviceType": "urn:yeelight-com:service:ColorAdjust:1",
         "actionList": {
           "getColor": {

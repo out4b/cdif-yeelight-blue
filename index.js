@@ -17,13 +17,13 @@ var YeelightBlue = function(bleDevice) {
   CdifDevice.call(this, spec);
   this.device = bleDevice;
   var service;
-  service = this.services['urn:cdif-net:serviceId:BinarySwitch'];
+  service = this.services['urn:cdif-net:serviceID:BinarySwitch'];
   service.addAction('getState', getYeelightBlueState.bind(this));
   service.addAction('setState', setYeelightBlueState.bind(this));
-  service = this.services['urn:cdif-net:serviceId:Dimming'];
+  service = this.services['urn:cdif-net:serviceID:Dimming'];
   service.addAction('getLoadLevelState', getYeelightBlueBrightness.bind(this));
   service.addAction('setLoadLevelState', setYeelightBlueBrightness.bind(this));
-  service = this.services['urn:yeelight-com:serviceId:ColorAdjust'];
+  service = this.services['urn:yeelight-com:serviceID:ColorAdjust'];
   service.addAction('getColor', getYeelightBlueColor.bind(this));
   service.addAction('setColor', setYeelightBlueColor.bind(this));
 
