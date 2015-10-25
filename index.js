@@ -16,16 +16,13 @@ var YeelightBlue = function(bleDevice) {
   var spec = require('./yeelight-blue.json');
   CdifDevice.call(this, spec);
   this.device = bleDevice;
-  var service;
-  service = this.services['urn:cdif-net:serviceID:BinarySwitch'];
-  service.addAction('getState', getYeelightBlueState.bind(this));
-  service.addAction('setState', setYeelightBlueState.bind(this));
-  service = this.services['urn:cdif-net:serviceID:Dimming'];
-  service.addAction('getLoadLevelState', getYeelightBlueBrightness.bind(this));
-  service.addAction('setLoadLevelState', setYeelightBlueBrightness.bind(this));
-  service = this.services['urn:yeelight-com:serviceID:ColorAdjust'];
-  service.addAction('getColor', getYeelightBlueColor.bind(this));
-  service.addAction('setColor', setYeelightBlueColor.bind(this));
+
+  this.setAction('urn:cdif-net:serviceID:BinarySwitch', 'getState', getYeelightBlueState.bind(this));
+  this.setAction('urn:cdif-net:serviceID:BinarySwitch', 'setState', setYeelightBlueState.bind(this));
+  this.setAction('urn:cdif-net:serviceID:Dimming','getLoadLevelState', getYeelightBlueBrightness.bind(this));
+  this.setAction('urn:cdif-net:serviceID:Dimming','setLoadLevelState', setYeelightBlueBrightness.bind(this));
+  this.setAction('urn:yeelight-com:serviceID:ColorAdjust', 'getColor', getYeelightBlueColor.bind(this));
+  this.setAction('urn:yeelight-com:serviceID:ColorAdjust', 'setColor', setYeelightBlueColor.bind(this));
 
   this.state = {red: 255, green: 255, blue: 255, bright: 100};
 };
