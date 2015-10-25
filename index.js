@@ -17,12 +17,12 @@ var YeelightBlue = function(bleDevice) {
   CdifDevice.call(this, spec);
   this.device = bleDevice;
 
-  this.setAction('urn:cdif-net:serviceID:BinarySwitch', 'getState', getYeelightBlueState.bind(this));
-  this.setAction('urn:cdif-net:serviceID:BinarySwitch', 'setState', setYeelightBlueState.bind(this));
-  this.setAction('urn:cdif-net:serviceID:Dimming','getLoadLevelState', getYeelightBlueBrightness.bind(this));
-  this.setAction('urn:cdif-net:serviceID:Dimming','setLoadLevelState', setYeelightBlueBrightness.bind(this));
-  this.setAction('urn:yeelight-com:serviceID:ColorAdjust', 'getColor', getYeelightBlueColor.bind(this));
-  this.setAction('urn:yeelight-com:serviceID:ColorAdjust', 'setColor', setYeelightBlueColor.bind(this));
+  this.setAction('urn:cdif-net:serviceID:BinarySwitch', 'getState', getYeelightBlueState);
+  this.setAction('urn:cdif-net:serviceID:BinarySwitch', 'setState', setYeelightBlueState);
+  this.setAction('urn:cdif-net:serviceID:Dimming','getLoadLevelState', getYeelightBlueBrightness);
+  this.setAction('urn:cdif-net:serviceID:Dimming','setLoadLevelState', setYeelightBlueBrightness);
+  this.setAction('urn:yeelight-com:serviceID:ColorAdjust', 'getColor', getYeelightBlueColor);
+  this.setAction('urn:yeelight-com:serviceID:ColorAdjust', 'setColor', setYeelightBlueColor);
 
   this.state = {red: 255, green: 255, blue: 255, bright: 100};
 };
