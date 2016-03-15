@@ -5,6 +5,7 @@
 */
 
 var util = require('util');
+var CdifUtil = require('cdif-util');
 var CdifDevice = require('cdif-device');
 
 var SERVICE_UUID          = 'fff0';
@@ -27,7 +28,7 @@ var YeelightBlue = function(bleDevice) {
   this.state = {red: 255, green: 255, blue: 255, bright: 100};
 };
 
-util.inherits(YeelightBlue, CdifDevice);
+CdifUtil.inherits(YeelightBlue, CdifDevice);
 
 YeelightBlue.is = function(peripheral) {
   var localName = peripheral.advertisement.localName;
