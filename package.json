@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/out4b/node-yeelight-blue.git"
+    "url": "https://github.com/out4b/cdif-yeelight-blue.git"
   },
   "keywords": [
     "yeelight",
@@ -17,9 +17,9 @@
   "author": "out4b <seeds.c@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/out4b/node-yeelight-blue/issues"
+    "url": "https://github.com/out4b/cdif-yeelight-blue/issues"
   },
-  "homepage": "https://github.com/out4b/node-yeelight-blue",
+  "homepage": "https://github.com/out4b/cdif-yeelight-blue",
   "dependencies": {
   },
   "devDependencies": {
