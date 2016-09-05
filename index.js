@@ -31,7 +31,7 @@ util.inherits(YeelightBlue, CdifDevice);
 YeelightBlue.is = function(peripheral) {
   var localName = peripheral.advertisement.localName;
 
-  return ((localName === undefined) || (localName === 'Yeelight Blu') || (localName === 'LightStrips'));
+  return ((localName === 'Yeelight Blu') || (localName === 'LightStrips'));
 };
 
 YeelightBlue.prototype.writeServiceStringCharacteristic = function(uuid, string, callback) {
