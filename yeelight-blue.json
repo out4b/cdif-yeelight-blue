@@ -15,7 +15,6 @@
     "UPC": "1234",
     "userAuth": false,
     "powerIndex": 40,
-    "presentationURL": "/presentation",
     "iconList": [
       {
         "mimetype": "image/png",
